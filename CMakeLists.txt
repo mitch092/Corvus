@@ -12,7 +12,7 @@ project ("Corvus" VERSION 0.1.0 LANGUAGES CXX)
 
 add_library(
 ${PROJECT_NAME} INTERFACE
-src/test.ixx
+#src/test.ixx
 )
 
 target_include_directories(${PROJECT_NAME} INTERFACE src/)
