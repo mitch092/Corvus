@@ -11,13 +11,13 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 project ("Corvus" VERSION 0.1.0 LANGUAGES CXX)
 
 add_library(
-${PROJECT_NAME} INTERFACE
-#src/test.ixx
+${PROJECT_NAME} STATIC
+src/test.ixx
 )
 
-target_include_directories(${PROJECT_NAME} INTERFACE src/)
+target_include_directories(${PROJECT_NAME} PUBLIC src/)
 
-target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_20)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_20)
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
