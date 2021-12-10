@@ -1,5 +1,5 @@
 #include <iostream>
-import test;
+#include "test.h"
 
 int main() {
     std::cout << cor::FirstFunction();
