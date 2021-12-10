@@ -20,14 +20,12 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(doctest)
 
-add_library(
-${LIBRARY_NAME} INTERFACE 
+add_library(${LIBRARY_NAME} INTERFACE 
 "src/test.h")
 target_include_directories(${LIBRARY_NAME} INTERFACE src/)
 
-add_executable(
-${TESTS_NAME} 
-"tests/main.cpp")
+add_executable(${TESTS_NAME} 
+"tests/main.cpp" "tests/test.cpp")
 
 target_link_libraries(${TESTS_NAME} PUBLIC ${LIBRARY_NAME} doctest::doctest)
 
