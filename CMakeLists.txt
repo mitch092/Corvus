@@ -10,14 +10,14 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 project ("Corvus" VERSION 0.1.0 LANGUAGES CXX)
 
-add_library(
-${PROJECT_NAME} STATIC
-src/test.ixx
-)
+add_executable(
+${PROJECT_NAME} 
+"src/test.ixx"
+"tests/main.cpp")
 
-target_include_directories(${PROJECT_NAME} PUBLIC src/)
-
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_20)
-set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
-set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
-
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
+target_compile_options(${PROJECT_NAME} PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:
+        /W4 /WX /permissive- /Z7 /MT /MP /Bt+>)
+target_compile_definitions(${PROJECT_NAME} PRIVATE SEQUENTIAL_PROCESSING=0)
+set_target_properties(${PROJECT_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION ON)
