@@ -3,7 +3,7 @@ Corvus is a modern C++ standard library. It is implemented using [test-driven de
 
 - Corvus does not depend on anything other than itself. Not even the C++ standard library/STL.
 - The project that tests Corvus is called Corax (mentioned in the CMakeLists.txt file).
-- Corax depends on Corvus, doctest and nothing else. Again, there are no references to the C++ standard library/STL.
+- Corax depends on Corvus and doctest. Corax also uses the C++ standard library/STL in order to check the correctness of Corvus.
 
 For now, Corvus is a header only library built with CMake. But in the future I would like to change it to use C++20 modules.
 Right now, there is no way (that I know of) for CMake to create and expose a C++20 module based library.
