@@ -4,3 +4,4 @@ ColumnLimit: 0
 UseTab: Never
 NamespaceIndentation: All
 FixNamespaceComments: false
+SortIncludes: false
